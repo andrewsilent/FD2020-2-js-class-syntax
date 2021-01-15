@@ -1,7 +1,7 @@
 /**
  * Create a range of numbers.
- * @param {number} from - The range.from value, default = 0..-1000
- * @param {number} to - The range.to value, default = 0..1000
+ * @param {number} from - The range.from value, default = 0
+ * @param {number} to - The range.to value, default = 10
  */
 class RangeValidator {
   constructor(from = 0, to = 10) {
