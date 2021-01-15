@@ -5,17 +5,18 @@
  */
 class RangeValidator {
   constructor(from = 0, to = 10) {
-    if (!(Number.isInteger(from)) || !(Number.isInteger(to))) {
-      throw new TypeError('Wrong type of value, {number} expected');
-    }
-    if (to < from) {
-      throw new RangeError('Value "To" must be greater than value "From"');
-    }
+    // if (!(Number.isInteger(from)) || !(Number.isInteger(to))) {
+    //   throw new TypeError('Wrong type of value, {number} expected');
+    // }
+    // if (to < from) {
+    //   throw new RangeError('Value "To" must be greater than value "From"');
+    // }
     this._from = from;
     this._to = to;
   }
 
   set from(v) {
+    console.log('123');
     if (v > this._to) {
       throw new RangeError('Value "From" must be less than value "To"');
     }
@@ -31,6 +32,7 @@ class RangeValidator {
   }
 
   set to(v) {
+    console.log('321');
     if (v < this._from) {
       throw new RangeError('Value "To" must be greater than value "From"');
     }
@@ -49,7 +51,7 @@ class RangeValidator {
     return [this._from, this._to];
   }
 
-  validate(v) {
+  validate(n) {
     if (!Number.isInteger(n)) {
       throw new TypeError('Wrong type of value, {number} expected');
     }
